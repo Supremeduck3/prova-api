@@ -57,10 +57,9 @@ app.get("/princesas/reino/:reino", (req, res)=>{
     }
     });
     app.get("/princesas/ativas/sim", (req, res)=>{
-        let active = req.params.ativa;
-    const stats = princesas.filter(b => b.active);
-    if(stats){
-        res.status(200).json(stats);
+    const ativa = princesas.filter(a => a.ativa);
+    if(ativa == true){
+        res.status(200).json(ativa);
     }else{
         res.status(404).json({error})
     }
